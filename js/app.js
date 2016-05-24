@@ -1,4 +1,5 @@
 /*
+/*
  * jQuery File Upload Plugin Angular JS Example
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -28,12 +29,10 @@
                 delete $httpProvider.defaults.headers.common['X-Requested-With'];
                 fileUploadProvider.defaults.redirect = window.location.href.replace(
                     /\/[^\/]*$/,
-                    '/cors/result.html?%s',
-                    console.log(window.location.href)
+                    '/cors/result.html?%s'
                 );
                 if (testurlI.test(window.location.href)) {
                     // Demo settings:
-                    console.log('I');
                     angular.extend(fileUploadProvider.defaults, {
                         // Enable image resizing, except for Android and Opera,
                         // which actually support image resizing, but fail to
@@ -45,7 +44,6 @@
                     });
                 }
                 else if(testurlV.test(window.location.href)){
-                    console.log('V');
                     angular.extend(fileUploadProvider.defaults, {
                         disableImageResize: /Android(?!.*Chrome)|Opera/i
                             .test(window.navigator.userAgent),
@@ -54,7 +52,6 @@
                     });
                 }
                 else if(testurlM.test(window.location.href)){
-                    console.log('M');
                     angular.extend(fileUploadProvider.defaults, {
                         disableImageResize: /Android(?!.*Chrome)|Opera/
                             .test(window.navigator.userAgent),
@@ -84,31 +81,25 @@
                                 if (testurlI.test(window.location.href)) {
                                     var re = /(\.|\/)(gif|jpe?g|png)$/;
                                     for (var i = 0; i < $scope.queue.length; i++) {
-                                        console.log($scope.queue[i]);
                                         if (!re.test($scope.queue[i].name)) {
                                             $scope.queue.splice(i, 1);
                                         }
-                                        console.log($scope.queue[i]);
                                     }
                                 }
                                 else if (testurlV.test(window.location.href)) {
                                     var re = /(\.|\/)(avi|mpg|mpeg|mov|rm|ram|swf|mp4|mkv|rmvb|iso)$/;
                                     for (var i = 0; i < $scope.queue.length; i++) {
-                                        console.log($scope.queue[i]);
                                         if (!re.test($scope.queue[i].name)) {
                                             $scope.queue.splice(i, 1);
                                         }
-                                        console.log($scope.queue[i]);
                                     }
                                 }
                                 else if (testurlM.test(window.location.href)) {
                                     var re = /(\.|\/)(mp3|cue|wav|wma|ape|acc)$/;
                                     for (var i = 0; i < $scope.queue.length; i++) {
-                                        console.log($scope.queue[i]);
                                         if (!re.test($scope.queue[i].name)) {
                                             $scope.queue.splice(i, 1);
                                         }
-                                        console.log($scope.queue[i]);
                                     }
                                 }
                             },
