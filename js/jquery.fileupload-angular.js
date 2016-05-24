@@ -52,7 +52,6 @@
                             return data.state();
                         };
                         file.$processing = function () {
-                            console.log(data.processing());
                             return data.processing();
                         };
                         file.$progress = function () {
