@@ -90,7 +90,6 @@
                                     var re = /(\.|\/)(avi|mpg|mpeg|mov|rm|ram|swf|mp4|mkv|rmvb|iso)$/;
                                     for (var i = $scope.queue.length - 1; i >= 0; i--) {
                                         if (!re.test($scope.queue[i].name)) {
-                                            console.log(i);
                                             $scope.queue.splice(i, 1);
                                         }
                                     }
