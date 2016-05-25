@@ -1,5 +1,5 @@
 /*
-/*
+ /*
  * jQuery File Upload Plugin Angular JS Example
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -43,7 +43,7 @@
                         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
                     });
                 }
-                else if(testurlV.test(window.location.href)){
+                else if (testurlV.test(window.location.href)) {
                     angular.extend(fileUploadProvider.defaults, {
                         disableImageResize: /Android(?!.*Chrome)|Opera/i
                             .test(window.navigator.userAgent),
@@ -51,7 +51,7 @@
                         acceptFileTypes: /(\.|\/)(avi|mpg|mpeg|mov|rm|ram|swf|mp4|mkv|rmvb|iso)$/i
                     });
                 }
-                else if(testurlM.test(window.location.href)){
+                else if (testurlM.test(window.location.href)) {
                     angular.extend(fileUploadProvider.defaults, {
                         disableImageResize: /Android(?!.*Chrome)|Opera/
                             .test(window.navigator.userAgent),
@@ -80,7 +80,7 @@
                                 var testurlM = /(Music.html)$/;
                                 if (testurlI.test(window.location.href)) {
                                     var re = /(\.|\/)(gif|jpe?g|png)$/;
-                                    for (var i = 0; i < $scope.queue.length; i++) {
+                                    for (var i = $scope.queue.length - 1; i >= 0; i--) {
                                         if (!re.test($scope.queue[i].name)) {
                                             $scope.queue.splice(i, 1);
                                         }
@@ -88,15 +88,16 @@
                                 }
                                 else if (testurlV.test(window.location.href)) {
                                     var re = /(\.|\/)(avi|mpg|mpeg|mov|rm|ram|swf|mp4|mkv|rmvb|iso)$/;
-                                    for (var i = 0; i < $scope.queue.length; i++) {
+                                    for (var i = $scope.queue.length - 1; i >= 0; i--) {
                                         if (!re.test($scope.queue[i].name)) {
+                                            console.log(i);
                                             $scope.queue.splice(i, 1);
                                         }
                                     }
                                 }
                                 else if (testurlM.test(window.location.href)) {
                                     var re = /(\.|\/)(mp3|cue|wav|wma|ape|acc)$/;
-                                    for (var i = 0; i < $scope.queue.length; i++) {
+                                    for (var i = $scope.queue.length - 1; i >= 0; i--) {
                                         if (!re.test($scope.queue[i].name)) {
                                             $scope.queue.splice(i, 1);
                                         }
